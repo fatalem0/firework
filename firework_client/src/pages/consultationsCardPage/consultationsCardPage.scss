@@ -1,0 +1,52 @@
+.consultation_card {
+    &__title {
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: #464f60 !important;
+    }
+
+    &__checkbox {
+        display: flex;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: #464f60;
+        margin-bottom: 9px;
+        margin-top: 9px;
+        margin-left: 0 !important;
+    }
+
+    &__question {
+        &-text {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: #464f60;
+    
+            &-area {
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__second-title {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: #464f60;
+        margin-bottom: 5px;
+        padding-top: 12px;
+    }
+
+    &__download_btn {
+        margin-bottom: 10px;
+        width: 200px;
+    }
+}

@@ -1,0 +1,84 @@
+version: '3'
+
+services:
+  firework-db:
+    container_name: firework-db
+    image: postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER} 
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} 
+    ports:
+      - "5432:5432"
+    networks:
+      - firework-network
+
+  firework-server-v2:
+    container_name: firework-v2
+    build:
+      context: firework_server_v2
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@firework-db:5432
+    depends_on:
+      - firework-db
+    ports:
+      - "5000:5000"
+    restart: always
+    networks:
+      - firework-network
+
+  firework-client:
+    build:
+      context: firework_client
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE_URL: http://${REACT_APP_API_BASE_URL}
+    ports:
+      - "80:80" 
+    restart: always
+    depends_on:
+      - firework-server-v2
+    networks:
+      - firework-network
+
+
+  firework-data:
+    container_name: firework-data
+    build:
+      context: firework_data
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@firework-db:5432
+      LOCAL_BASE : ${LOCAL_BASE}
+    depends_on:
+      - firework-server-v2
+    ports:
+      - "5001:5001"
+    networks:
+      - firework-network
+
+
+  firework-mail:
+    container_name: firework-mail
+    build:
+      context: firework_mail
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@firework-db:5432
+      LOCAL_BASE : ${LOCAL_BASE}
+      MAIL_SERVER : ${MAIL_SERVER}
+      MAIL_PORT : ${MAIL_PORT}
+      MAIL_USERNAME : ${MAIL_USERNAME}
+      MAIL_PASSWORD : ${MAIL_PASSWORD}
+    depends_on:
+      - firework-data
+    ports:
+      - "5002:5002"
+    networks:
+      - firework-network
+
+networks:
+  firework-network:
+    driver: bridge
+

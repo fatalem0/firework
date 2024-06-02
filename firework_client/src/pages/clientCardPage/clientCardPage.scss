@@ -1,0 +1,45 @@
+.client_card {
+    &__title {
+        color: #265189;
+        margin: 0;
+        font-size: 24px;
+
+        span {
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: #464f60;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__subtitle {
+        color: #32343A;
+        margin: 0;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    &__descriptions_title {
+        color: #32343A;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    &__checkbox {
+        margin-top: 10px;
+        color: #464f60;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+    }
+
+    &__input {
+        margin-left: -12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #464f60;
+    }
+}

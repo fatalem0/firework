@@ -1,0 +1,48 @@
+.tests_editing_result {
+    &__container {
+        width: 300px;
+    }
+
+    &__title {
+        font-size: 24px !important;
+        color: #005AAB !important;
+        margin: 0;
+    }
+
+    &__range {
+        &_container {
+            margin-top: 13px;
+            margin-bottom: 24px;
+
+            &_from {
+                width: 100;
+                margin-right: 20px;
+            }
+
+            &_to {
+                width: 100;
+            }
+        }
+
+        &_text {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.88);
+        }
+    }
+
+    &__delete_icon {
+        color: red;
+        cursor: pointer;
+    }
+
+    &__add_btn {
+        background-color: #265189;
+        color: #ffffff;
+    }
+
+    &__add_question_btn {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,15 @@
+.consultation_tab__input {
+    width: 188px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.consultation_tab__button {
+    &-search {
+        width: 90px;
+        margin-right: 8px;
+    }
+    &-reset {
+        width: 90px;
+    }
+}

@@ -1,0 +1,61 @@
+html {
+    background: #aac1de;
+}
+
+.test_page {
+    &__question {
+        &_header {
+            width: 700px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        &_title {
+            font-weight: 500;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        &_container {
+            box-sizing: border-box;
+            width: 700px;
+            min-height: 330px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            margin-top: 55px;
+            padding: 20px;
+
+            &-inner {
+                margin-bottom: 10px;
+            }
+        }
+
+        &_progress {
+            &__text {
+                width: 100px;
+                height: 30px;
+                text-align: center;
+                color: #aac1de;
+                font-size: 25px;
+                border: 5px solid #F3EBDF;
+                border-radius: 20px;
+            }
+        }
+
+        &_result {
+            &__recommendations {
+                width: 100%;
+                margin-bottom: 20px;
+                color: #1B54FE;
+                font-weight: 700;
+                font-size: 30px;
+                max-width: 100%;
+            }
+
+            &__desc {
+                font-size: 22px;
+            }
+        }
+    }
+}

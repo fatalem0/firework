@@ -1,0 +1,25 @@
+.client_type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 120px;
+    height: 23px;
+    border-radius: 54px;
+    box-sizing: border-box;
+
+    &-worker {
+        background-color: #E9FFEF;
+        color: #409261;
+    }
+
+    &-client {
+        background-color: #FFF2DD;
+        color: #D98634;
+    }
+}
+
+.ant-select-selection-item {
+    display: flex;
+    align-items: center;
+}
